@@ -181,7 +181,7 @@ function deleteDoctorById(string org, string doctorId) returns string|()|error {
 
 function addDoctor(DoctorItem doctorItem, string org) returns Doctor|error {
 
-    string docId = uuid:createType1AsString();
+    string docId = doctorItem.emailAddress;
     time:Utc currentUtc = time:utcNow();
     time:Civil currentTime = time:utcToCivil(currentUtc);
     string timeString = civilToIso8601(currentTime);
