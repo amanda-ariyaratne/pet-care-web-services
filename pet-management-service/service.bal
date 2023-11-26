@@ -6,6 +6,11 @@ choreoUserInfo:UserInfoResolver userInfoResolver = new;
 
 # A service representing a network-accessible API
 # bound to port `9090`.
+@http:ServiceConfig {
+    cors: {
+        allowOrigins: ["*"]
+    }
+}
 service / on new http:Listener(9090) {
 
     # Get all pets
